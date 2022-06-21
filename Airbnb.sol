@@ -12,7 +12,7 @@ contract Airbnb {
     address payable owner;
     address payable renter;
     uint256[] public validTokens;
-    uint256 public costPerNight = 1 ether;
+    // uint256 public costPerNight = 1 ether;
     IdaoContract daoContract;
 
 
@@ -91,10 +91,6 @@ contract Airbnb {
         stay.active = true;
         property.available = false;
 
-    }
-
-    function getbalance() public view returns (uint256) {
-        return msg.sender.balance;
     }
 
     function endStay(uint256 _stayId, uint256 _propertyId) public {
