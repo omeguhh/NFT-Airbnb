@@ -78,6 +78,7 @@ contract Airbnb {
         Property storage property = propertyById[_propertyId];
         require(property.pricePerNight <= msg.value, "Please deposit more.");
         require(property.allowedNumberOfGuests >= _guests, "Too many guests.");
+        require(property.available == true, "This unit is unavailable.");
         _StayIds.increment();
         uint stayId = _StayIds.current();
         Stay storage stay = stayById[stayId];
